@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Pérsonnel de  La Division Informatique</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th>Nom</th>
+                  <th>Prénom</th>
+                  <th>grade</th>
+                  <th>Mle</th>
+                  <th>N°:Tel</th>
+                </tr>
+                </thead>
+                <tbody>
+                  {% for p in pers %}
+                <tr>
+                  <td>{{p.first_name}}</td>
+                  <td>{{p.last_name}}</td>
+                  <td>{{p.grade}}</td>
+                  <td>{{p.mle}}</td>
+                  <td>{{p.tel}}</td>
+                </tr>
+                  {%endfor%}
+                </tbody>
+                <tfoot>
+                <tr>
+                  <th>Nom</th>
+                  <th>Prénom</th>
+                  <th>grade(s)</th>
+                  <th>Mle</th>
+                  <th>N°:Tel</th>
+                </tr>
+                </tfoot>
+              </table>
+              <div class="box-footer" >
+                <button class="btn btn-primary" ><a href=" {% url 'addpers' %} " class="text-danger">inserer</a></button>
+              </div>
+              
+            </div>
+            
+          </div>
+          <!-- /.box -->
+
+
+  {% endblock content %}

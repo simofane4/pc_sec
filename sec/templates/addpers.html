@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+  
+<div class="box box-success">
+    <div class="box-header with-border">
+      <h3 class="box-title">Add New Personnel </h3>
+    </div>
+    <div class="box-body">
+      <input class="form-control input-lg" type="text" placeholder="Nom" {{form.first_name}} 
+      <br>
+      <input class="form-control input-lg" type="text" placeholder="Prénom"{{form.last_name}} 
+      <br>
+      
+      {% comment %}
+      <input class="form-control input-lg" type="text" pattern = "[0-9]{6}+-[0-9]{2}+-[0-9]{2}+-[0-9]{2}" placeholder=".input-lg"{{form.mle}}
+      <input class="form-control input-lg" type="text" placeholder=".input-lg"{{form.grade}}
+      {% endcomment %}
+      <span class="select2-selection select2-selection--multiple" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1">
+        <ul class="select2-selection__rendered">
+          <li class="select2-search select2-search--inline">
+        <input class="select2-search__field" type="search" tabindex="0" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" role="textbox" aria-autocomplete="list" placeholder="Select a State" style="width: 514.5px;"{{form.grade}}
+      </li>
+    </ul>
+    </span>
+      <br>
+     
+      <br>
+      <input class="form-control input-lg" type="text" placeholder=".input-lg"{{form.tel}}
+      
+    </div>
+    <!-- /.box-body -->
+  </div>
+
+  
+{% endblock content %}
