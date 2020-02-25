@@ -38,6 +38,7 @@ def personel(request):
     
  # last work in this  im stoped in file  html creation form & make stayl 
 def add_pers(request):
+    pers = Pers.objects.all()
     if request.method == 'POST':
         form = CreatPers(request.POST)
         if form.is_valid :
@@ -48,6 +49,7 @@ def add_pers(request):
         form = CreatPers(request.POST)
 
     context = {
+        'pers': pers ,
         'form':form ,
         'title':'Add_Pers'
     }
