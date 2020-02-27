@@ -81,4 +81,82 @@
 {% endcomment %}
 
   
+{% endcomment %}
+
+
+<div class="col-md-6">
+
+          <div class="box box-danger">
+            <div class="box-header">
+              <h3 class="box-title">Add Pers</h3>
+            </div>
+             
+            <div class="box-body">
+                 
+
+              <form method= "POST">
+
+                {% csrf_token %}
+
+                <div class="form-group">
+                  <label>Nom</label>
+                  <input type="text" class="form-control" placeholder="Enter ..." {{form.first_name}}
+                </div>
+                <div class="form-group">
+                  <label>Prénom</label>
+                  <input type="text" class="form-control" placeholder="Enter ..."{{form.last_name}}
+                </div>
+                 
+               <div class="form-group">
+                <label>Grade</label>
+                <select class="form-control select2" style="width: 100%;">
+                {% for choice  in form.grade %}
+                  <option selected="selected"></option>
+                  
+                  <option> {{choice}} </option>
+                 
+                  {% endfor %}
+                  
+                </select>
+              </div>
+              <!-- phone mask -->
+              <div class="form-group">
+                <label>MLE:</label>
+
+                <div class="input-group">
+                  <div class="input-group-addon">
+                    <i class="fa fa-barcode"></i>
+                  </div>
+                  <input type="text" class="form-control" data-inputmask="&quot;mask&quot;: &quot;999999-99-99-99&quot;" data-mask=""{{form.mle}}
+                </div>
+                <!-- /.input group -->
+              </div>
+              <!-- /.form group -->
+
+              <!-- IP mask -->
+              <div class="form-group">
+                <label>N° Tel:</label>
+
+                <div class="input-group">
+                  <div class="input-group-addon">
+                    <i class="fa fa-phone"></i>
+                  </div>
+                  <input type="text" class="form-control" data-inputmask="&quot;mask&quot;: &quot;9999999999&quot;" data-mask="" {{form.tel}}
+                </div>
+                <!-- /.input group -->
+              </div>
+              <!-- /.form group -->
+              <div class="box-footer">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+             </form>
+            </div>
+            <!-- /.box-body -->
+            
+          </div>
+          <!-- /.box -->
+
+
+        </div>
+
 {% endblock content %}
