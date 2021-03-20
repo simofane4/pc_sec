@@ -9,7 +9,7 @@ django-static-adminlte==2.4.3.2
 fanstatic==1.1
 Flask==1.1.1
 itsdangerous==1.1.0
-Jinja2==2.10.3
+Jinja2==2.11.3
 js.adminlte==2.4.9
 js.bootstrap==3.3.4
 js.jquery==3.3.1
